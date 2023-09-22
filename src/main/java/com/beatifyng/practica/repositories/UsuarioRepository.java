@@ -16,8 +16,4 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Integer>{
 	
 	public List<Usuario> findByGenero(String genero);
 	
-	public List<Usuario> findByGeneroAndMaculino(String genero, String masculino);
-	
-	public List<Usuario> findByGeneroAndFemenino(String genero, String femenino);
-	
 }

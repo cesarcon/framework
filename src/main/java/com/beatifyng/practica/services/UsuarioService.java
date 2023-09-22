@@ -26,12 +26,8 @@ public class UsuarioService {
 		return usuarioRepository.findByEmailAndNombre(email, nombre);
 	}
 	
-	public List<Usuario> buscarPorGeneroMaculino(String genero, String masculino){
-		return usuarioRepository.findByGeneroAndMaculino(genero, masculino);
-	}
-	
-	public List<Usuario> buscarPorGeneroFemenino(String genero, String femenino){
-		return usuarioRepository.findByGeneroAndFemenino(genero, femenino);
+	public List<Usuario> buscarPorGenero(String genero){
+		return usuarioRepository.findByGenero(genero);
 	}
 	
 }
