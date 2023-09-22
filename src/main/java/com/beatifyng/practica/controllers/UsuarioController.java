@@ -35,4 +35,14 @@ public class UsuarioController {
 			@PathVariable String nombre){
 		return new ResponseEntity<> (usuarioService.buscarPorEmailNombre(email, nombre), HttpStatus.OK);
 	}
+	
+	@GetMapping("/consultar-por-genero/{genero}/{masculino}")
+	public ResponseEntity<List<Usuario>> consultarPorGeneroMasculino(@PathVariable String genero, @PathVariable String masculino){
+		return new ResponseEntity<> (usuarioService.buscarPorGeneroMaculino(genero, masculino), HttpStatus.OK);
+	}
+	
+	@GetMapping("/consultar-por-genero/{genero}/{femenino}")
+	public ResponseEntity<List<Usuario>> consultarPorGeneroFemenino(@PathVariable String genero, @PathVariable String femenino){
+		return new ResponseEntity<> (usuarioService.buscarPorGeneroFemenino(genero, femenino), HttpStatus.OK);
+	}
 }

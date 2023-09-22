@@ -25,4 +25,13 @@ public class UsuarioService {
 	public List<Usuario> buscarPorEmailNombre(String email, String nombre){
 		return usuarioRepository.findByEmailAndNombre(email, nombre);
 	}
+	
+	public List<Usuario> buscarPorGeneroMaculino(String genero, String masculino){
+		return usuarioRepository.findByGeneroAndMaculino(genero, masculino);
+	}
+	
+	public List<Usuario> buscarPorGeneroFemenino(String genero, String femenino){
+		return usuarioRepository.findByGeneroAndFemenino(genero, femenino);
+	}
+	
 }
