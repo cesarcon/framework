@@ -30,4 +30,8 @@ public class UsuarioService {
 		return usuarioRepository.findByGenero(genero);
 	}
 	
+	public Usuario deleteById (int idUsuario) {
+		return usuarioRepository.deleteById(idUsuario);
+	
+	}
 }

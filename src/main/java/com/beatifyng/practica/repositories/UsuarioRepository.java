@@ -16,4 +16,6 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Integer>{
 	
 	public List<Usuario> findByGenero(String genero);
 	
+	public Usuario deleteById (int idUsuario);
+	
 }
