@@ -1,6 +1,7 @@
 package com.beatifyng.practica.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,8 +31,18 @@ public class UsuarioService {
 		return usuarioRepository.findByGenero(genero);
 	}
 	
-	public Usuario deleteById (int idUsuario) {
-		return usuarioRepository.deleteById(idUsuario);
+	public void deleteById (int idUsuario) {
+		usuarioRepository.deleteById(idUsuario);
+	
+	}
+	
+	public Usuario updateUser(Usuario usuario, int idUsuario) {
+		Optional<Usuario> optional = usuarioRepository.findById(idUsuario);
+		if (optional.isPresent()) {
+			return usuarioRepository.save(usuario);
+		} else {
+			return null;
+		}
 	
 	}
 }
